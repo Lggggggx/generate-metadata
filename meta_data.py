@@ -1163,7 +1163,7 @@ def cal_meta_data(X, y, distacne, cluster_center_index, modelnames, trains, test
     return metadata
 
 
-def cal_meta_data_sequence(X, y, distacne, cluster_center_index, modelnames, test, label_ind, unlabel_ind, split_count_th, num_xjselect):
+def cal_meta_data_sequence(X, y, distacne, cluster_center_index, modelnames, test, label_ind, unlabel_ind, split_count_th, num_xjselect, diff_five_round):
     """calculate the designed mate data. 
     Parameters
     ----------
@@ -1219,7 +1219,7 @@ def cal_meta_data_sequence(X, y, distacne, cluster_center_index, modelnames, tes
         for k in range(num_models):
             model = models[k]
             # Repeated many(20) times in the same model and split
-            for _ in range(20):
+            for _ in range(diff_five_round):
 
                 # genearte five rounds before
                 l_ind = copy.deepcopy(label_ind)
