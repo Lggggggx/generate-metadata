@@ -22,6 +22,8 @@ if __name__ == "__main__":
     # The number of unlabel data to select to generate the meta data.
     num_xjselect = 30
 
+    diff_five_round = 20
+
     n_labelleds = np.arange(2, 100, 2)
 
     # first choose a dataset
@@ -33,16 +35,16 @@ if __name__ == "__main__":
         distacne = dataset.get_distance()
         _, cluster_center_index = dataset.get_cluster_center()
         print(datasetname + ' DataSet currently being processed********************************************')
-        metadata = None
         # run multiple split on the same dataset
         # every time change the value of initial_label_rate
         for split_c in split_count:
             for n_labelled in n_labelleds:
+                metadata = None
                 # trains, tests, label_inds, unlabel_inds = dataset.split_data_by_nlabelled(n_labelled, test_ratio=0.6, split_count=split_count, saving_path='./n_labelled_split_info')
                 trains, tests, label_inds, unlabel_inds = dataset.split_data_by_nlabelled_fulldataset(n_labelled, test_ratio=0.5, split_count=split_c)
                 for t in range(split_c):
                     meta_data = cal_meta_data_sequence(X, y, distacne, cluster_center_index, modelnames,  
-                        tests[t], label_inds[t], unlabel_inds[t], t, num_xjselect)
+                        tests[t], label_inds[t], unlabel_inds[t], t, num_xjselect, diff_five_round)
                     if metadata is None:
                         metadata = meta_data
                     else:

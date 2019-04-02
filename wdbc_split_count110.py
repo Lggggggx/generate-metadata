@@ -18,7 +18,7 @@ if __name__ == "__main__":
     modelnames = ['LR']
 
     # in the same dataset and the same ratio of initial_label_rate,the number of split.
-    split_count = [70]
+    split_count = [110]
     # The number of unlabel data to select to generate the meta data.
     num_xjselect = 30
 
