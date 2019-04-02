@@ -12,13 +12,13 @@ if __name__ == "__main__":
     # datasetnames = ['echocardiogram', 'heart', 'heart-hungarian', 'heart-statlog', 'house',
     #                     'house-votes', 'spect', 'statlog-heart', 'vertebral-column-2clases']
     # 'wdbc', 'clean1', 'ethn', , 'blood', 'breast-cancer-wisc'
-    datasetnames = ['australian']
+    datasetnames = ['wdbc']
     # Different types of models, each type has many models with different parameters
     # modelnames = ['KNN', 'LR', 'RFC', 'RFR', 'DTC', 'DTR', 'SVM', 'GBC', 'ABC', 'ABR']
     modelnames = ['LR']
 
     # in the same dataset and the same ratio of initial_label_rate,the number of split.
-    split_count = [30, 50, 70, 90]
+    split_count = [50]
     # The number of unlabel data to select to generate the meta data.
     num_xjselect = 30
 
