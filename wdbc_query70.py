@@ -49,7 +49,7 @@ if __name__ == "__main__":
                     else:
                         metadata = np.vstack((metadata, meta_data))       
 
-                np.save('./bigmetadata/datasetname/query_time/'+str(n_labelled)+datasetname +str(split_count)+ '_big_metadata'+str(num_xjselect)+'.npy', metadata)           
+                np.save('./bigmetadata/'+datasetname+'/query_time/'+str(n_labelled)+datasetname +str(split_count)+ '_big_metadata'+str(num_xjselect)+'.npy', metadata)           
 
             # print(datasetname + ' is complete and saved successfully.')
             # np.save('./bigmetadata/'+datasetname + '_big_metadata.npy', metadata)
